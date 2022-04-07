@@ -23,8 +23,15 @@ CloseSideBar.addEventListener('click',()=>{
         sun.classList.toggle('active');
         moon.classList.toggle('active');
     });
+    window.addEventListener('resize',()=>{
+        if(window.innerWidth > 768){
+            sideBar.style.transform = 'translateX(0)';
+        }if(window.innerWidth < 769){
+            sideBar.style.transform = 'translateX(-100%)';
+        }
+    });
     document.addEventListener('DOMContentLoaded',()=>{
-        sideBar.style.transform = 'translateX(-100%)';
-    
-    
+        if(window.innerWidth < 769){
+            sideBar.style.transform = 'translateX(-100%)';
+        }
     })
